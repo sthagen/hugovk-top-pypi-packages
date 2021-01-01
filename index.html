@@ -60,30 +60,31 @@
       outline: 0.05em solid #090;
     }
   </style>
-  <title>Top PyPI Packages: A fortnightly dump of the 4,000 most-downloaded packages from PyPI</title>
+  <title>Top PyPI Packages: A monthly dump of the 4,000 most-downloaded packages from PyPI</title>
   <meta property="og:title" content="Top PyPI Packages">
   <meta property="og:type" content="website">
   <!--<meta property="og:image" content="https://hugovk.github.io/top-pypi-packages/image.png">-->
   <!--<meta property="og:image:width" content="630">-->
   <!--<meta property="og:image:height" content="630">-->
   <meta property="og:url" content="https://hugovk.github.io/top-pypi-packages/">
-  <meta property="og:description" content="A fortnightly dump of the 4,000 most-downloaded packages from PyPI">
+  <meta property="og:description" content="A monthly dump of the 4,000 most-downloaded packages from PyPI">
 </head>
 <body ng-app="app" ng-controller="packageCtrl">
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
       <h1 id="top">Top PyPI Packages</h1>
+      <a href="https://zenodo.org/badge/latestdoi/116806538"><img alt="DOI" src="https://zenodo.org/badge/116806538.svg"></a>
         <h2 id="what">What is this?</h2>
-        <p>A fortnightly dump of the 4,000 most-downloaded packages from PyPI.</p>
+        <p>A monthly dump of the 4,000 most-downloaded packages from PyPI.</p>
         <ul>
           <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.json</a></li>
           <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.json</a></li>
         </ul>
         <p>Minified:</p>
         <ul>
-          <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json</a></li>
-          <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.min.json</a></li>
+          <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json</a></li>
+          <li><a href="https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.min.json">https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.min.json</a></li>
         </ul>
         <h2 id="thanks">Thanks</h2>
         <p>Thanks to <a href="https://pypi.org/">PyPI</a>, <a href="https://cloud.google.com/bigquery/">Google BigQuery</a>, <a href="https://github.com/ofek/pypinfo">pypinfo</a> and <a href="https://pythonwheels.com/">Python Wheels</a>.</p>
@@ -92,14 +93,15 @@
         <ul>
           <li><a href="https://hugovk.github.io/drop-python/">Drop Python</a></li>
           <li><a href="https://pythonwheels.com/">Python Wheels</a><!-- https://github.com/meshy/pythonwheels/pull/100 --></li>
-          <li><a href="http://py3readiness.org/">Python 3 Readiness</a><!-- https://github.com/chhantyal/py3readiness/pull/51 --></li>
+          <li><a href="http://chhantyal.net/py3readiness">Python 3 Readiness</a><!-- https://github.com/chhantyal/py3readiness/pull/51 --></li>
           <li><a href="https://maxnoe.github.io/who-dropped-python2/">Who has already dropped Python 2 support?</a></li>
-          <li>Something else? Let us know!</li>
+          <li>Something else? <a href="https://github.com/hugovk/top-pypi-packages/issues/new">Let us know!</a></li>
         </ul>
       </div>
       <div class="col-sm-6">
         <h2 id="charts">The charts</h2>
         <div>
+          <p>Last updated <span ng-bind="last_update"></span>. (Updated monthly.)</p>
           <span ng-bind="now_showing_packages">...</span>
           <span ng-bind="now_showing_days">...</span>
         </div>
@@ -130,7 +132,7 @@
       </div>
     </div>
     <footer>
-      <p>Last updated <span ng-bind="last_update"></span>. (Updated fortnightly.)</p>
+      <p>Last updated <span ng-bind="last_update"></span>. (Updated monthly.)</p>
       <a class="github-fork-ribbon" href="https://github.com/hugovk/top-pypi-packages" target="_blank" rel="noopener" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
     </footer>
   </div>
